@@ -2,7 +2,7 @@
 
 namespace Audentio\LaravelAuth\Models\Traits;
 
-use Audentio\LaravelAuth\Interfaces\AuthenticatableInterface;
+use Audentio\LaravelAuth\Models\Interfaces\AuthenticatableInterface;
 use Illuminate\Support\Facades\Hash;
 
 trait AuthenticatableTrait
