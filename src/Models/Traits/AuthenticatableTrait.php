@@ -5,8 +5,13 @@ namespace Audentio\LaravelAuth\Models\Traits;
 use Audentio\LaravelAuth\Models\Interfaces\AuthenticatableInterface;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+
 trait AuthenticatableTrait
 {
+    use Authenticatable, Authorizable;
+
     protected $isGuest = false;
 
     public function isGuest(): bool

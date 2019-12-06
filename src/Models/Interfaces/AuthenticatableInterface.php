@@ -2,7 +2,10 @@
 
 namespace Audentio\LaravelAuth\Models\Interfaces;
 
-interface AuthenticatableInterface
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+
+interface AuthenticatableInterface extends AuthenticatableContract, AuthorizableContract
 {
     public function isGuest(): bool;
 
