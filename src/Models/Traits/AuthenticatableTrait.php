@@ -1,6 +1,6 @@
 <?php
 
-namespace Audentio\LaravelAuth\Traits;
+namespace Audentio\LaravelAuth\Models\Traits;
 
 use Audentio\LaravelAuth\Interfaces\AuthenticatableInterface;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +24,7 @@ trait AuthenticatableTrait
         $this->isGuest = $isGuest;
     }
 
-    public function findForPassport($identifier): ?AuthenticatableInterface
+    public function findForPassport(string $identifier): ?AuthenticatableInterface
     {
         foreach ($this->getAuthenticationIdentifierFields() as $key) {
             $this->orWhere($key, $identifier);
