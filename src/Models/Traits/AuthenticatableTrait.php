@@ -33,7 +33,7 @@ trait AuthenticatableTrait
         return $this->first();
     }
 
-    public function verifyPassword(string $password)
+    public function verifyPassword(string $password): bool
     {
         return Hash::check($password, $this->getPasswordHashValue());
     }
