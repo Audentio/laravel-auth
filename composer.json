@@ -13,9 +13,7 @@
         "php": ">=7.3.0",
         "ext-json": "*",
         "ext-openssl": "*",
-        "audentio/laravel-base": "^0.3.0",
-        "illuminate/contracts": "5.8.*|^6.0",
-        "illuminate/support": "5.8.*|^6.0",
+        "audentio/laravel-base": "^0.4.0",
         "laravel/passport": "^7.2|^8.0"
     },
     "autoload": {
