@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\Access\Authorizable;
+use Laravel\Passport\HasApiTokens;
 
 trait AuthenticatableTrait
 {
-    use Authenticatable, Authorizable;
+    use Authenticatable, Authorizable, HasApiTokens;
 
     protected $isGuest = false;
 
