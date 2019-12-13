@@ -32,11 +32,15 @@ trait AuthenticatableTrait
 
     public function findForPassport(string $identifier): ?AuthenticatableInterface
     {
-        foreach ($this->getAuthenticationIdentifierFields() as $key) {
-            $this->orWhere($key, $identifier);
-        }
+        $query = $this;
 
-        return $this->first();
+        $query = $query->where(function($query) use ($identifier) {
+            foreach ($this->getAuthenticationIdentifierFields() as $key) {
+                $query->orWhere($key, $identifier);
+            }
+        });
+
+        return $query->first();
     }
 
     public function verifyPassword(string $password): bool
