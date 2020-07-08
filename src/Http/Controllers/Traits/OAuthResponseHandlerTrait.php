@@ -2,7 +2,7 @@
 
 namespace Audentio\LaravelAuth\Http\Controllers;
 
-use Audentio\LaravelBase\Http\Controllers\Traits\ApiResponseHandlerTrait;
+use Audentio\LaravelBase\Foundation\Traits\ApiResponseHandlerTrait;
 use Illuminate\Http\Response;
 
 trait OAuthResponseHandlerTrait
