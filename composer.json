@@ -14,7 +14,7 @@
         "ext-json": "*",
         "ext-openssl": "*",
         "audentio/laravel-base": "^1.0",
-        "laravel/passport": "^10.x"
+        "laravel/passport": "^7.2|^8.0|^10.x"
     },
     "autoload": {
         "psr-4": {
