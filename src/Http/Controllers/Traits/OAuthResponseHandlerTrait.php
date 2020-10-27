@@ -1,6 +1,6 @@
 <?php
 
-namespace Audentio\LaravelAuth\Http\Controllers;
+namespace Audentio\LaravelAuth\Http\Controllers\Traits;
 
 use Audentio\LaravelBase\Foundation\Traits\ApiResponseHandlerTrait;
 use Illuminate\Http\Response;
