@@ -17,6 +17,8 @@ class LaravelAuth
         ], function (Router $router) {
             Route::post('/token', 'AccessTokenController@issueToken')
                 ->middleware(InjectClientSecretForPasswordGrant::class);
+
+            Route::delete('/token', 'AccessTokenController@destroy');
         });
     }
 }
