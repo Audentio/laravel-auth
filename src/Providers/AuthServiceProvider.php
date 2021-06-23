@@ -8,6 +8,8 @@ use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
+    protected static bool $shouldRunMigrations;
+
     public function boot()
     {
         if ($this->app->runningInConsole()) {
@@ -19,7 +21,11 @@ class AuthServiceProvider extends ServiceProvider
 
     protected function registerMigrations()
     {
-        if (Passport::$runsMigrations) {
+        if (!isset(self::$shouldRunMigrations)) {
+            self::$shouldRunMigrations = Passport::$runsMigrations;
+        }
+
+        if (self::$shouldRunMigrations) {
             $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
             Passport::ignoreMigrations();
         }
