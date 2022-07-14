@@ -16,7 +16,9 @@ class AuthServiceProvider extends ServiceProvider
             $this->registerMigrations();
         }
 
-        LaravelAuth::routes();
+        if (!LaravelAuth::shouldSkipRoutes()) {
+            LaravelAuth::routes();
+        }
     }
 
     protected function registerMigrations()

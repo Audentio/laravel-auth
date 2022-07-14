@@ -9,6 +9,18 @@ use Illuminate\Support\Facades\Route;
 
 class LaravelAuth
 {
+    private static bool $skipRoutes = false;
+
+    public static function shouldSkipRoutes(): bool
+    {
+        return static::$skipRoutes;
+    }
+
+    public static function skipRoutes(bool $skipRoutes = true): void
+    {
+        static::$skipRoutes = $skipRoutes;
+    }
+    
     public static function routes(array $middleware = [])
     {
         Route::group([
